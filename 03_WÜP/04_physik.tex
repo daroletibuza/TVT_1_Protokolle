@@ -1,0 +1,100 @@
+\section{Theoretische Grundlagen}
+\label{sec:theorie}
+
+Grundlage für den Versuch stellte die Wärmeübertragung am Rohr da. So lässt sich der übertragende Wärmestrom über die spezifische Wärmekapazität, dem Massenstrom, sowie aus der Differenz zwischen eingehender und ausgehender Temperatur des Stromes.
+\begin{flalign}
+ 	\dot{Q} &= \dot{m}*c_p*\Delta T\\
+ 	\dot{Q} &= \dot{m}*c_p*(T_\omega-T_\alpha)\\
+ 	 \dot{Q} &= \dot{V}*\rho*c_p*(T_\omega-T_\alpha)
+\end{flalign}
+Da die generierten Messwerte dennoch ähnlich real gemessenen Werten sind, wird für die Auswertung ein Korrekturterm für den Volumenstrom eingeführt. Dieser hält die Abweichungen im Volumenstrom fest und korrigiert den Wert für den abgegebene bzw. aufgenommenen Wärmestrom. Mit Hilfe des Korrekturwertes entspricht die abgegebene Wärmemenge $\dot{Q}_{ab}$ der aufgenommenen Wärme $\dot{Q}_{auf}$.
+\begin{flalign}
+	\dot{Q} &= \left(\dot{V}\pm \Delta \dot{V}\right)*\rho*c_p*(T_\omega-T_\alpha)
+\end{flalign}
+Bestimmt wird der Korrekturvolumenstrom $\Delta \dot{V}$ durch gleichsetzen der angepassten Gleichungen für die Wärmeströme.
+\begin{flalign}
+	\dot{Q}_{ab} &= \dot{Q}_{auf} \\
+	 \left(\dot{V}_{ab}+\Delta \dot{V}\right)*\rho*c_p*(T_{\omega,i}-T_{\alpha,i}) &= \left(\dot{V}_{auf}-\Delta \dot{V}\right)*\rho*c_p*(T_{\omega,j}-T_{\alpha,j})
+\end{flalign}
+
+Um das Verhältnis zwischen einzusetzender Pumpleistung aufgrund von Druckverlusten und dem übertragenen Wärmestrom berechnen zu können, ist die folgende Gleichung für die Pumpenleistung notwendig:
+
+\begin{flalign}
+	P_{Pumpe} &= \Delta p * \dot{V}
+\end{flalign}
+
+Unter der Annahme, dass eine elektrische Kreiselpumpe mit einem Wirkungsgrad von \SI{80}{\percent } eingesetzt wird, ergibt sich für die einzusetzend, elektrische Leistung:
+\begin{flalign}
+	P_{elektr.} &= \frac{P_{Pumpe}}{0,8}
+\end{flalign}
+
+Für die weitere Charakterisierung der Strömung außerhalb des Rohrs wird der hydraulische Rohrdurchmesser $d_H$ als theoretische Größe eingeführt. Er soll sicherstellen, dass die vorherrschenden, turbulenten Strömungen ändernd gut beschrieben werden können.
+\begin{flalign}
+	d_H \, (\text{Rohr})	&= D_i-d_a
+\end{flalign}
+Solche Größen sind unter anderem die Reynoldszahl $Re$ zur Charakterisierung der Strömung als turbulent, laminar oder einem Übergangszustand.
+\begin{flalign}
+	Re	&= \frac{d*w}{\nu}
+\end{flalign}
+Die Prandtl-Zahl hingegen gibt das Verhältnis zwischen kinematischer Viskosität $\nu$ und der Temperaturleitfähigkeit $a$ an.
+\begin{flalign}
+		Pr	&= \frac{c_p*\nu*\rho}{\lambda}
+\end{flalign}
+Idealer Weise lässt sich so aus den beiden zuletzt genannten Größe eine weitere, neue, dimensionslose Kennzahl definieren um den konvektiven Wärmeübergang zwischen einer festen Oberfläche und einem strömenden Fluid zu beschreiben. Die \textsc{Nußelt}-Zahl $Nu$. Für die äußere Wasserströmung lässt sich dieser Übergang als ideal annehmen, da der Wärmeübergang der Luft deutlich stärker die Übertragung beeinflusst.
+\begin{flalign}
+	Nu_{\text{ideal}}	&= 0,023*\left(Re^2*Pr\right)^{0,4}
+\end{flalign}
+Aus einem weiteren Zusammenhang der \textsc{Nußelt}-Zahl gegenüber der Wärmekonvektion, lässt sich so der Wärmeübergangkoeffizient $\alpha_a$ für die wasserseitige Wärmeübertragung berechnen.
+\begin{flalign}
+	Nu 	&= \frac{\alpha*d}{\lambda}\\[1mm]
+	\alpha	&=  \frac{Nu*\lambda}{d}
+\end{flalign}
+
+Aus den berechneten Wärmeübergangskoeffizienten, den geometrischen Daten der Wärmeübertrager, sowie den Wärmeleitkoeffizienten des Fluides lässt sich als weiterer Kennparameter der Wärmedurchgangswiderstand $U_a$ einführen. Dieser charakterisiert ebenfalls den Wärmeübergangsprozess.
+\begin{flalign}
+	U_a		&=\left(\frac{d_a}{\alpha_i*d_i}+\frac{d_a}{2*\lambda}*\ln\left[\frac{d_a}{d_i}\right]+\frac{1}{\alpha_a}\right)^{-1}
+\end{flalign}
+
+Im Folgenden sind die genutzten geometrischen Rohrdaten, sowie die Stoffdaten hinterlegt.
+
+\begin{table}[h!]
+	\centering
+	\caption{Rohrdaten}
+	\label{tab:rohrdaten}%
+	\renewcommand{\arraystretch}{1.2}
+	%\resizebox{14cm}{!}{
+		\begin{tabulary}{1.15\textwidth}{C|C|C}
+			\hline
+			&\textbf{warmseitig} (Innenrohr)& \textbf{kaltseitig} (Doppelmantel) \\
+			\hline
+			$d_i \left[\si{\milli \meter}\right]$&10&16\\
+			$d_a \left[\si{\milli \meter}\right]$&13&- \\
+			\hline
+			$L \left[\si{ \meter}\right]$&\multicolumn{2}{c}{7,5}\\
+			\hline
+	\end{tabulary}
+%}
+\end{table}%
+\FloatBarrier
+\begin{table}[h!]
+	\centering
+	\caption{Stoffdaten}
+	\label{tab:stoffdaten}%
+	\renewcommand{\arraystretch}{1.3}
+	\resizebox{15cm}{!}{
+	\begin{tabulary}{1.3\textwidth}{L|L|L}
+		\hline
+		\textbf{Stoffwert }&\textbf{Einheit}& \textbf{Gleichung} \\
+		\hline
+		Wärmeleitfähigkeit (Stahl)& $\left[\si{\watt\per \meter\per \kelvin }\right]$&$\lambda_{Stahl}=15$\\
+		Dichte (Wasser)&$\left[\si{\kg\per\cmt }\right]$&$\rho=1005,7-0,375*T$ \\
+		Wärmeleitfähigkeit (Wasser)& $\left[\si{\kilo \joule \per \meter\per \kelvin\per \hour }\right]$&$\lambda_{Wasser}=2,0107+0,007606*T-0,000033467*T^2$\\
+		kinematische Viskosität (Wasser) & $\left[\si{\sqm\per \second}\right]$&$\ln\left(\nu\right) = -13,2883-0,0280596*T+0,000112275*T^2$\\
+		spezifische Wärmekapazität (Wasser) & $\left[\si{\kilo \joule \per \kg \per \kelvin }\right]$ & $c_p = 4,185$\\
+		\hline
+	\end{tabulary}
+	}
+\end{table}%
+\FloatBarrier
+
+
