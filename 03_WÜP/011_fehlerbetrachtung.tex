@@ -1,14 +1,47 @@
 \section{Fehlerbetrachtung}
 \label{sec:fehler}
 
-Die zur Auswertung zugeteilten Werte waren zum Teil kaum auswertbar. Daher sind in den Tabellen des Abschnitts \ref{sec:ergebnisse} sind einige Lücken zu erkennen. Die Auswertung der Messungen einiger Ethanol-Proben wurde unmöglich. Teilweise sind Messergebnisse auch nicht nachvollziehbar. So zum Beispiel die enorme Differenz zwischen den Messungen der Isopropanol-Probe in Tabelle \ref{tab:MesswerteIsopropanol}. Unklar ist warum man für den gleichen Stoff, 2-Propanol, auch Isopropanol genannt, zwei unterschiedliche Namen verwendet und sie in separaten Versuchen untersucht hat. 
 
-Dadurch, dass der Versuch nicht von den Autoren selbst durchgeführt wurde sind Rückschlüsse auf eventuell geschehene Missgeschicke oder grobe Anwendungsfehler, die die gefundenen Diskrepanzen erklären könnten, kaum mehr möglich. 
-
-Messungenauigkeiten der Waage und der Mikroliterspritze können, wie auch Messfehler des Titrators, einen gewissen Fehler verursacht haben. Viel entscheidender erscheinen allerdings die Anwendungsfehler. Diese erstrecken sich von Übertragungsfehlern zu Abweichungen in der Handlungsreihenfolge oder der nicht-Einhaltung von vorgegebenen Zeiten und Hinweisen.
-
-Ebenfalls ist nicht klar ob bei der Analyse mit der Ofentechnik alle Bauteile, die die Probe enthalten, luftdicht verschlossen waren. War dies nicht gegeben, könnte der Wassergehalt durch Wasserverlust an die Umgebung oder zusätzliche Luftfeuchte verfälscht werden.
-
-Auch verunreinigte oder überalterte Geräte und Chemikalien könnten Abweichungen verursacht haben.
-
-Insgesamt ist es ratsam den Versuch erneut durchzuführen, um die möglichen Anwendungsfehler dieser Versuchsdurchführung ausschließen zu können.
+\begin{figure}[h!]
+	\begin{center}
+		\resizebox{0.8\textwidth}{!}{
+			\begin{tikzpicture}
+			\begin{axis}[
+			width  = 0.85*\textwidth,
+			height = 7cm,
+			major x tick style = transparent,
+			ybar=2*\pgflinewidth,
+			bar width=14pt,
+			ymajorgrids = true,
+			ylabel = {$\left|\Delta \dot{V}\right|\, \left[\si{\cmt\per \second}\right]$},
+			symbolic x coords={WÜ1,WÜ2},
+			xtick = data,
+			%scaled y ticks = false,
+			enlarge x limits=0.25,
+			ymin=0,
+			ymax=0.00001,
+			legend cell align=left,
+			legend style={
+				at={(1,1.05)},
+				anchor=south east,
+				column sep=1ex
+			}
+			]
+			%Reihenschaltung
+			\addplot[style={black,fill=black,mark=none}]
+			coordinates {(WÜ1, 9.7E-07) (WÜ2,1.71E-06)};
+			
+			%Paralaleschaltung
+			\addplot[style={gray,fill=gray,mark=none}]
+			coordinates {(WÜ1,8.00E-06) (WÜ2,1.64E-06)};
+			
+			
+			\legend{Reihenschaltung, Parallelschaltung}
+			\end{axis}
+			\end{tikzpicture}
+		}
+		\caption{Grafischer Vergleich der Korrekturvolumenströme}
+		\label{dia:korrrek}
+	\end{center}
+\end{figure}
+\FloatBarrier
