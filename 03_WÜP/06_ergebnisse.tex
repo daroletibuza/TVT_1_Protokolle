@@ -176,15 +176,17 @@ Die berechneten Werte finden sich in den Tabellen \ref{tab:warme_reihe} und \ref
 \begin{table}[h!]
 	\renewcommand*{\arraystretch}{1.2}
 	\centering
-	\rowcolors{2}{gray!25}{white}
+	\rowcolors{2}{white}{gray!25}
 	\caption{Berechnete Wärmeströme und Korrekturvolumenstrom für die Parallelschaltung}
 	\resizebox{15cm}{!}{
 		\begin{tabulary}{1.2\textwidth}{C|CC|C|CC|C}
 			\hline
 			\textbf{System} & $\boldsymbol{Q_{ab}} \, \left[\si{\kilo \watt}\right]$ & $\boldsymbol{Q_{auf}} \, \left[\si{\kilo \watt}\right]$& $\boldsymbol{\dot{V}_{korr}} \, \left[\si{\cmt \per \second}\right]$& $\boldsymbol{Q_{ab, korr}} \, \left[\si{\kilo \watt}\right]$&$\boldsymbol{Q_{auf, korr}} \, \left[\si{\kilo \watt}\right]$ & $\boldsymbol{\Delta Q_{korr}} \, \left[\si{\kilo \watt}\right]$\\
 			\hline
-			WÜ1   & 15,01  & 13,44  &\SI{ -8,00E-06 }{}& 14,18 & 14,18  & 0,00 \\
-			WÜ2   & 14,57  & 14,24  & \SI{-1,64E-06}{} & 14,40  & 14,40  & 0,00 \\
+			WÜ1   & 7,50  & 6,72  &\SI{ -8,00E-06 }{}& 7,09 & 7,09 & 0,00 \\
+			WÜ2   & 7,28 & 7,12  & \SI{-1,64E-06}{} & 7,20  & 7,20  & 0,00 \\
+			\hline
+			Gesamt   & 14,78 & 13,84  & \SI{-9,64E-06}{} & 14,29  & 14,29  & 0,00 \\
 			\hline
 		\end{tabulary}%
 	}
@@ -195,45 +197,52 @@ Die berechneten Werte finden sich in den Tabellen \ref{tab:warme_reihe} und \ref
 \subsection{Leistungen und Wärmeübertragungsparameter}
 Um nun die Effizienz der Anlage besser beschreiben zu können, wird der transportierte Wärmestrom in ein Verhältnis zur elektrischen Leistung einer Kreiselpumpe mit 80\% Wirkungsgrad gesetzt. Diese Kreiselpumpe fördert die jeweilige Flüssigkeit durch das System.\\
 Über die dimensionslosen Kennzahlen $Re$, $Pr$ und $Nu$ lassen sich nun die Wärmeübertragungsparameter $\alpha $ und $U$ berechnen. Über diese Werte lässt sich die Geometrie unabhängig von der Geometrie miteinander vergleichen. Zur Vereinfachung der Rechnungen wird die Wärmeleitfähigkeit vom Stahlrohr mit \SI{15}{\watt\per\meter \per\kelvin} angenommen. Die Wärmeleitfähigkeit des Fluides, sowie die Viskosität werden jedoch als Funktion von der Temperatur eingerechnet.\\
-Die Ergebnisse dieser Rechnungen finden sich in den Tabellen \ref{tab:leistung_reihe} und \ref{tab:leistung_para} wieder und lassen sich mit Hilfe der theoretischen Grundlagen nachvollziehen.
+Die Ergebnisse dieser Rechnungen finden sich in den Tabellen \ref{tab:leistung_reihe} und \ref{tab:leistung_para} wieder und lassen sich mithilfe der theoretischen Grundlagen nachvollziehen.
 \begin{table}[h!]
 	\centering
-	\rowcolors{2}{gray!25}{white}
-	\caption{Berechnete Leistungen, dimensionslose Kennzahlen und Wärmeübertragungsparameter der Reihenschaltung}
+	%\rowcolors{3}{gray!25}{white}{gray!10}
+	\caption{Berechnete Leistungen, dimensionslose Kennzahlen und \linebreak Wärmeübertragungsparameter der Reihenschaltung}
 	\resizebox{15cm}{!}{
-	\begin{tabulary}{1.5\textwidth}{L|C|CCC||CCC|CC}
+	\begin{tabulary}{1.55\textwidth}{L|C|CCC||CCC|CC}
 		\hline
 		\textbf{System} & $\boldsymbol{\Delta p} \, \left[\si{\bar}\right]$ & $\boldsymbol{P_{Pumpe}} \, \left[\si{\kilo \watt}\right]$ &  $\boldsymbol{P_{Elektrisch}} \, \left[\si{\kilo \watt}\right]$& $\boldsymbol{Q/P_{Elektrisch}}$ & \textbf{Re} & \textbf{Pr}& \textbf{Nu} & $\boldsymbol{\alpha}  \, \left[\si{\kilo \watt \per \sqm \per \kelvin}\right]$ & $\boldsymbol{U} \, \left[\si{\watt \per \meter\per \kelvin}\right]$ \\
 		\hline
-		Gesamt warm & 0,82  & \SI{1,07E-02}{} & \SI{1,34E-02}{} & 916   & -&- & -& - & -\\
-		Gesamt kalt & 2,24  & \SI{1,93E-02 }{}& \SI{2,41E-02}{} & 510   & - & - & - & -& -\\
+		WÜ1 warm & 0,29  & \SI{3,76E-03}{} & \SI{4,70E-03}{}3 & 1602  & \SI{2,20E+04}{} & 5,13  & \SI{131,9}{} & 8,14  & \multirow{2}{*}{31,13}  \\
+		WÜ1 kalt & 20,61 &\SI{ 1,78E-01 }{}&\SI{ 2,22E-01}{} & 34    &\SI{ 3,41E+03}{} & 7,87  & \SI{35,2 }{}& 6,93  &  \\
 		\hline
-		WÜ1 warm & 0,29  & \SI{3,76E-03}{} & \SI{4,70E-0}{}3 & 1602  & \SI{2,20E+04}{} & 5,13  & \SI{1,32E+02}{} & 8,14  & 31,13 \\
-		WÜ1 kalt & 20,61 &\SI{ 1,78E-01 }{}&\SI{ 2,22E-01}{} & 34    &\SI{ 3,41E+03}{} & 7,87  & \SI{3,52E+01 }{}& 6,93  &  \\
+		WÜ2 warm & 0,35  & \SI{4,66E-03 }{}& \SI{5,83E-03 }{}& 817   & \SI{2,87E+04}{} & 3,80  & \SI{144,5}{} & 9,20  & \multirow{2}{*}{34,98} \\
+		WÜ2 kalt & 12,93 & \SI{1,12E-01}{} &\SI{ 1,40E-01 }{}& 34    & \SI{5,39E+03}{} & 4,68  & \SI{41,2}{} & 8,57  &  \\
 		\hline
-		WÜ2 warm & 0,35  & \SI{4,66E-03 }{}& \SI{5,83E-03 }{}& 817   & \SI{2,87E+04}{} & 3,80  & \SI{1,45E+02}{} & 9,20  & 34,98 \\
-		WÜ2 kalt & 12,93 & \SI{1,12E-01}{} &\SI{ 1,40E-01 }{}& 34    & \SI{5,39E+03}{} & 4,68  & \SI{4,12E+01}{} & 8,57  &  \\
+		Gesamt warm & 0,82  & \multirow{2}{*}{\SI{3,00E-02
+			}{}}&  \multirow{2}{*}{\SI{3,76E-02}{}} & \multirow{2}{*}{328}   & -&- & -& - & -\\
+		Gesamt kalt & 2,24  & & &    & -&- & -& - & -\\
+		\hline
 	\end{tabulary}%
 }
 	\label{tab:leistung_reihe}
 \end{table}%
-
+\vspace*{-5mm}
 \begin{table}[h!]
 	\centering
-	\rowcolors{2}{gray!25}{white}
-	\caption{Berechnete Leistungen, dimensionslose Kennzahlen und Wärmeübertragungsparameter der Parallelschaltung}
+%	\rowcolors{2}{gray!25}{white}
+	\caption{Berechnete Leistungen, dimensionslose Kennzahlen und \linebreak Wärmeübertragungsparameter der Parallelschaltung}
 	\resizebox{15cm}{!}{
-		\begin{tabulary}{1.5\textwidth}{L|C|CCC||CCC|CC}
+		\begin{tabulary}{1.55\textwidth}{L|C|CCC||CCC|CC}
 			\hline
 			\textbf{System} & $\boldsymbol{\Delta p} \, \left[\si{\bar}\right]$ & $\boldsymbol{P_{Pumpe}} \, \left[\si{\kilo \watt}\right]$ &  $\boldsymbol{P_{Elektrisch}} \, \left[\si{\kilo \watt}\right]$& $\boldsymbol{Q/P_{Elektrisch}}$ & \textbf{Re} & \textbf{Pr}& \textbf{Nu} & $\boldsymbol{\alpha}  \, \left[\si{\kilo \watt \per \sqm \per \kelvin}\right]$ & $\boldsymbol{U} \, \left[\si{\watt \per \meter\per \kelvin}\right]$ \\
 			\hline
-			WÜ1 warm & 0,06 & \SI{8,42E-04}{} & \SI{1,05E-03}{}& 13464  & \SI{2,32E+04}{} & 5,39  & \SI{1,40E+02}{} & 8,63  & 36,13 \\
-			WÜ1 kalt & 2,20 &\SI{ 3,20E-02 }{}&\SI{ 4,00E-02}{} & 354    &\SI{ 5,74E+03}{} & 7,87  & \SI{3,52E+01 }{}& 6,93  &  \\
+			WÜ1 warm & 0,06 & \SI{4,21E-04}{} & \SI{5,27E-04}{}& 13464  & \SI{1,16E+04}{} & 5,39  & \SI{80,62}{} & 4,96  & \multirow{2}{*}{23,97} \\
+			WÜ1 kalt & 2,20 &\SI{ 1,60E-02 }{}&\SI{ 2,00E-02}{} & 354    &\SI{ 2,87E+03}{} & 7,83  & \SI{30,57}{}& 6,02  &  \\
 			\hline
-			WÜ2 warm & 0,01  & \SI{1,45E-04 }{}& \SI{1,82E-04 }{}& 79320   & \SI{2,36E+04}{} & 3,80  & \SI{1,45E+02}{} & 9,20  & 36,27 \\
-			WÜ2 kalt & 1,07 & \SI{1,56E-02}{} &\SI{ 1,95E-02 }{}& 739    & \SI{5,75E+03}{} & 4,68  & \SI{4,12E+01}{} & 8,57  &  \\
+			WÜ2 warm & 0,01  & \SI{7,26E-05 }{}& \SI{9,08E-05 }{}& 79320   & \SI{1,18E+04}{} & 5,28  & \SI{81,10}{} & 4,99 & \multirow{2}{*}{24,08} \\
+			WÜ2 kalt & 1,07 & \SI{7,79E-03}{} &\SI{ 9,74E-03 }{}& 739    & \SI{2,87E+03}{} & 7,83  & \SI{30,62}{} & 6,03 &  \\
+			\hline
+			Gesamt warm & 0,07  & \multirow{2}{*}{\SI{2,43E-02
+				}{}}&  \multirow{2}{*}{\SI{3,04E-02}{}} & \multirow{2}{*}{471}   & -&- & -& - & -\\
+			Gesamt kalt & 3,28 & & &    & -&- & -& - & -\\
+			\hline
 		\end{tabulary}%
-	}
+}
 	\label{tab:leistung_para}
 \end{table}%
 
