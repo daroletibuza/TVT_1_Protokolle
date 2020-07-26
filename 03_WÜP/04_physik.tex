@@ -1,13 +1,13 @@
 \section{Theoretische Grundlagen}
 \label{sec:theorie}
 
-Grundlage für den Versuch stellte die Wärmeübertragung am Rohr da. So lässt sich der übertragende Wärmestrom über die spezifische Wärmekapazität, dem Massenstrom, sowie aus der Differenz zwischen eingehender und ausgehender Temperatur des Stromes.
+Grundlage für den Versuch stellte die Wärmeübertragung am Rohr dar. So lässt sich der übertragene Wärmestrom über die spezifische Wärmekapazität, dem Massenstrom, sowie aus der Differenz zwischen eingehender und ausgehender Temperatur des Stromes berechnen.
 \begin{flalign}
  	\dot{Q} &= \dot{m}*c_p*\Delta T\\
  	\dot{Q} &= \dot{m}*c_p*(T_\omega-T_\alpha)\\
  	 \dot{Q} &= \dot{V}*\rho*c_p*(T_\omega-T_\alpha)
 \end{flalign}
-Da die generierten Messwerte dennoch ähnlich real gemessenen Werten sind, wird für die Auswertung ein Korrekturterm für den Volumenstrom eingeführt. Dieser hält die Abweichungen im Volumenstrom fest und korrigiert den Wert für den abgegebene bzw. aufgenommenen Wärmestrom. Mit Hilfe des Korrekturwertes entspricht die abgegebene Wärmemenge $\dot{Q}_{ab}$ der aufgenommenen Wärme $\dot{Q}_{auf}$.
+Da die generierten Messwerte dennoch ähnlich real gemessenen Werten sind, wird für die Auswertung ein Korrekturterm für den Volumenstrom eingeführt. Dieser hält die Abweichungen im Volumenstrom fest und korrigiert den Wert für den abgegebenen bzw. aufgenommenen Wärmestrom. Mit Hilfe des Korrekturwertes entspricht die abgegebene Wärmemenge $\dot{Q}_{ab}$ der aufgenommenen Wärme $\dot{Q}_{auf}$.
 \begin{flalign}
 	\dot{Q} &= \left(\dot{V}\pm \Delta \dot{V}\right)*\rho*c_p*(T_\omega-T_\alpha)
 \end{flalign}
@@ -18,7 +18,7 @@ Bestimmt wird der Korrekturvolumenstrom $\Delta \dot{V}$ durch gleichsetzen der 
 \end{flalign}
 
 Um das Verhältnis zwischen einzusetzender Pumpleistung aufgrund von Druckverlusten und dem übertragenen Wärmestrom berechnen zu können, ist die folgende Gleichung für die Pumpenleistung notwendig:
-
+\vspace*{-3mm}
 \begin{flalign}
 	P_{Pumpe} &= \Delta p * \dot{V}
 \end{flalign}
@@ -40,7 +40,7 @@ Die Prandtl-Zahl hingegen gibt das Verhältnis zwischen kinematischer Viskositä
 \begin{flalign}
 		Pr	&= \frac{c_p*\nu*\rho}{\lambda}
 \end{flalign}
-Idealer Weise lässt sich so aus den beiden zuletzt genannten Größe eine weitere, neue, dimensionslose Kennzahl definieren um den konvektiven Wärmeübergang zwischen einer festen Oberfläche und einem strömenden Fluid zu beschreiben. Die \textsc{Nußelt}-Zahl $Nu$. Für die äußere Wasserströmung lässt sich dieser Übergang als ideal annehmen, da der Wärmeübergang der Luft deutlich stärker die Übertragung beeinflusst.
+Idealer Weise lässt sich so aus den beiden zuletzt genannten Größe eine weitere, dimensionslose Kennzahl definieren um den konvektiven Wärmeübergang zwischen einer festen Oberfläche und einem strömenden Fluid zu beschreiben. Diese Kenngröße ist die \textsc{Nußelt}-Zahl $Nu$. Für die äußere Wasserströmung lässt sich dieser Übergang als ideal annehmen, da der Wärmeübergang der Luft deutlich stärker die Übertragung beeinflusst.
 \begin{flalign}
 	Nu_{\text{ideal}}	&= 0,023*\left(Re^2*Pr\right)^{0,4}
 \end{flalign}
@@ -56,7 +56,7 @@ Aus den berechneten Wärmeübergangskoeffizienten, den geometrischen Daten der W
 \end{flalign}
 
 Im Folgenden sind die genutzten geometrischen Rohrdaten, sowie die Stoffdaten hinterlegt.
-
+\vspace*{-7mm}
 \begin{table}[h!]
 	\centering
 	\caption{Rohrdaten}
